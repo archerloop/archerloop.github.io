@@ -5,9 +5,8 @@
     <url>/2022/07/27/hexo%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<p>部署Hexo + Next + Github page + Google analytics，记录过程。 </p>
 <h2 id="Hexo-Next部署"><a href="#Hexo-Next部署" class="headerlink" title="Hexo+Next部署"></a>Hexo+Next部署</h2><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>首先在 GitHub 新建一个仓库（Repository），名称为 {username}.github.io，注意这个名比较特殊，必须要是 github.io 为后缀结尾的。新建完成之后就可以进行后续操作了。<br>笔者通过Vscode作为编辑器。</p>
-<h3 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h3><p><a href="https://nodejs.org/en">Node.js</a><br><a href="https://code.visualstudio.com/">Vscode</a><br><a href="https://git-scm.com/download/">Git</a></p>
 <span id="more"></span>
-
+<h3 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h3><p><a href="https://nodejs.org/en">Node.js</a><br><a href="https://code.visualstudio.com/">Vscode</a><br><a href="https://git-scm.com/download/">Git</a></p>
 <h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>1.打开命令行，输入以下命令：</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 
@@ -15,12 +14,20 @@
 <p>2.进入命令行继续输入以下命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装hexo</span></span><br><span class="line">npm install hexo</span><br><span class="line"><span class="comment"># 生成静态文件</span></span><br><span class="line">hexo g</span><br><span class="line"><span class="comment"># 部署</span></span><br><span class="line">hexo d</span><br><span class="line"><span class="comment"># 查看hexo</span></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p>3.完成部署<br>访问 <a href="http://localhost:4000/">http://localhost:4000</a></p>
-<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>安装Hexo-deployer-git</p>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><p>安装Hexo-deployer-git(Useful)</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 
+<p>安装live2d角色(Optional)<br>1.安装hexo-helper-live2d</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-helper-live2d --save</span><br></pre></td></tr></table></figure>
+<p>2.安装live2d</p>
+<p>其中替换成想要的，比如我安装的的是live2d-widget-model-koharu(koharu)</p>
+<p>还有很多的model可供选择:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">live2d-widget-model-chitose</span><br><span class="line">live2d-widget-model-epsilon2_1</span><br><span class="line">live2d-widget-model-gf</span><br><span class="line">live2d-widget-model-haruto</span><br><span class="line">live2d-widget-model-hibiki</span><br><span class="line">live2d-widget-model-hijiki</span><br><span class="line">live2d-widget-model-izumi</span><br><span class="line">live2d-widget-model-koharu</span><br><span class="line">live2d-widget-model-miku</span><br><span class="line">live2d-widget-model-ni-j</span><br><span class="line">live2d-widget-model-nico</span><br><span class="line">live2d-widget-model-nietzsche</span><br><span class="line">live2d-widget-model-nipsilon</span><br><span class="line">live2d-widget-model-nito</span><br><span class="line">live2d-widget-model-shizuku</span><br><span class="line">live2d-widget-model-tororo</span><br><span class="line">live2d-widget-model-tsumiki</span><br><span class="line">live2d-widget-model-unitychan</span><br><span class="line">live2d-widget-model-wanko</span><br><span class="line">live2d-widget-model-z16</span><br></pre></td></tr></table></figure>
+<p>[live2d模型展示图:]<br><a href="https://zhousiwei.gitee.io/live2d-widget.js/examples/index.html">https://zhousiwei.gitee.io/live2d-widget.js/examples/index.html</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// $ npm install &lt;live2d-widget-model&gt;</span><br><span class="line">// 例: 安装</span><br><span class="line">$ npm install live2d-widget-model-koharu</span><br></pre></td></tr></table></figure>
 
-
-
+<p>在Hexo站点配置文件_config.yml，或者主题配置文件_config.yml中添加如下配置<br>至于每个配置项的作用看名字就很清楚，也可以修改值然后部署看下效果.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment"># 启用看板娘</span></span><br><span class="line">  scriptFrom: <span class="built_in">local</span> <span class="comment"># 默认</span></span><br><span class="line">  pluginRootPath: live2dw/ <span class="comment"># 插件在站点上的根目录(相对路径)</span></span><br><span class="line">  pluginJsPath: lib/ <span class="comment"># 脚本文件相对与插件根目录路径</span></span><br><span class="line">  pluginModelPath: assets/ <span class="comment"># 模型文件相对与插件根目录路径</span></span><br><span class="line">  tagMode: <span class="literal">false</span> <span class="comment"># 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span></span><br><span class="line">  <span class="built_in">log</span>: <span class="literal">false</span> <span class="comment"># 调试, 是否在控制台输出日志</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-koharu <span class="comment"># 使用的live2d包名</span></span><br><span class="line">  display:</span><br><span class="line">    position: left <span class="comment">#屏幕上的显示位置</span></span><br><span class="line">    width: 225 <span class="comment">#显示宽度</span></span><br><span class="line">    height: 450 <span class="comment">#显示高度</span></span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span> <span class="comment">#移动端是否显示</span></span><br><span class="line">  react:</span><br><span class="line">    opacity: 0.7 <span class="comment">#透明度</span></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
 </search>
