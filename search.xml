@@ -30,4 +30,9 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span> <span class="comment"># 启用看板娘</span></span><br><span class="line">  scriptFrom: <span class="built_in">local</span> <span class="comment"># 默认</span></span><br><span class="line">  pluginRootPath: live2dw/ <span class="comment"># 插件在站点上的根目录(相对路径)</span></span><br><span class="line">  pluginJsPath: lib/ <span class="comment"># 脚本文件相对与插件根目录路径</span></span><br><span class="line">  pluginModelPath: assets/ <span class="comment"># 模型文件相对与插件根目录路径</span></span><br><span class="line">  tagMode: <span class="literal">false</span> <span class="comment"># 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span></span><br><span class="line">  <span class="built_in">log</span>: <span class="literal">false</span> <span class="comment"># 调试, 是否在控制台输出日志</span></span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-koharu <span class="comment"># 使用的live2d包名</span></span><br><span class="line">  display:</span><br><span class="line">    position: left <span class="comment">#屏幕上的显示位置</span></span><br><span class="line">    width: 225 <span class="comment">#显示宽度</span></span><br><span class="line">    height: 450 <span class="comment">#显示高度</span></span><br><span class="line">  mobile:</span><br><span class="line">    show: <span class="literal">true</span> <span class="comment">#移动端是否显示</span></span><br><span class="line">  react:</span><br><span class="line">    opacity: 0.7 <span class="comment">#透明度</span></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
+  <entry>
+    <title>内网穿透方案选择</title>
+    <url>/2022/08/11/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E6%96%B9%E6%A1%88%E9%80%89%E6%8B%A9/</url>
+    <content><![CDATA[]]></content>
+  </entry>
 </search>
